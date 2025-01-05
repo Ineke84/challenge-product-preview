@@ -1,0 +1,182 @@
+:root {
+	--color-primary: hsl(158, 36%, 37%);
+	--color-secondary: hsl(30, 38%, 92%);
+	--color-primary-dark: hsl(158, 36%, 20%);
+	--color-text-heading: hsl(212, 21%, 14%);
+	--color-text-default: hsl(228, 12%, 48%);
+	--color-white: hsl(0, 0%, 100%);
+}
+
+.montserrat-medium {
+	font-family: "Montserrat", serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+}
+
+.montserrat-bold {
+	font-family: "Montserrat", serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+}
+
+.fraunces-bold {
+	font-family: "Fraunces", serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+	font-variation-settings: "SOFT" 0, "WONK" 0;
+}
+
+/* ============ BOILERPLATE ============ */
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	border: none;
+}
+
+/* Prevent font size inflation */
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+body {
+	margin: 0;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+h1,
+h2,
+h3,
+h4,
+p {
+	margin-block: 0;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+	text-wrap: balance;
+	line-height: 1.1;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	display: block;
+	max-inline-size: 100%;
+	block-size: auto;
+}
+
+button {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+/* Remove the outline for mouse users but keep it for keyboard users */
+:focus:not(:focus-visible) {
+	outline: none;
+}
+
+/* ============ STYLING ============ */
+body {
+	font-family: "Montserrat", serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	color: var(--color-text-default);
+	font-size: 0.875rem;
+	line-height: 1.5;
+	background-color: var(--color-secondary);
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+	grid-template-rows: 1fr 2rem;
+}
+
+.button-primary {
+	display: flex;
+	gap: 0.75rem;
+	justify-content: center;
+	align-items: center;
+	color: var(--color-white);
+	background-color: var(--color-primary);
+	padding: 1rem;
+	border-radius: 0.5rem;
+
+	&:hover {
+		background-color: var(--color-primary-dark);
+	}
+}
+
+.product-tile {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	border-radius: 0.5rem;
+	background-color: var(--color-white);
+	margin: 1.5rem 1rem;
+
+	@media (min-width: 40rem) {
+		grid-template-columns: 1fr 1fr;
+		max-width: 40rem;
+	}
+}
+
+.product-content {
+	padding: 1.5rem;
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: minmax(0, 1fr);
+
+	@media (min-width: 40rem) {
+		padding: 2rem;
+	}
+}
+
+.product-tag {
+	font-size: 0.8rem;
+	letter-spacing: 0.25rem;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+}
+
+.product-pricing {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.product-name,
+.product-price {
+	font-family: "Fraunces", serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 2rem;
+	font-variation-settings: "SOFT" 0, "WONK" 0;
+	color: var(--color-text-heading);
+}
+
+.product-price {
+	color: var(--color-primary);
+}
+.product-price-old {
+	text-decoration: line-through;
+}
+
+.attribution {
+	font-size: 0.7rem;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
