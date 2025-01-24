@@ -87,10 +87,6 @@ button {
 
 /* ============ STYLING ============ */
 body {
-	font-family: "Montserrat", serif;
-	font-optical-sizing: auto;
-	font-weight: 500;
-	font-style: normal;
 	color: var(--color-text-default);
 	font-size: 0.875rem;
 	line-height: 1.5;
@@ -110,8 +106,9 @@ body {
 	background-color: var(--color-primary);
 	padding: 1rem;
 	border-radius: 0.5rem;
+	cursor: pointer;
 
-	&:hover {
+	&:hover, &:focus-visible {
 		background-color: var(--color-primary-dark);
 	}
 }
@@ -126,6 +123,14 @@ body {
 	@media (min-width: 40rem) {
 		grid-template-columns: 1fr 1fr;
 		max-width: 40rem;
+	}
+}
+
+.product-image > img {
+	border-radius: 0.5rem 0.5rem 0 0;
+
+	@media (min-width: 40rem) {
+		border-radius: 0.5rem 0 0 0.5rem;
 	}
 }
 
@@ -156,12 +161,7 @@ body {
 
 .product-name,
 .product-price {
-	font-family: "Fraunces", serif;
-	font-optical-sizing: auto;
-	font-weight: 700;
-	font-style: normal;
 	font-size: 2rem;
-	font-variation-settings: "SOFT" 0, "WONK" 0;
 	color: var(--color-text-heading);
 }
 
@@ -175,8 +175,8 @@ body {
 .attribution {
 	font-size: 0.7rem;
 	text-align: center;
-}
 
-.attribution a {
-	color: hsl(228, 45%, 44%);
+	a {
+		color: hsl(228, 45%, 44%);
+	}
 }
